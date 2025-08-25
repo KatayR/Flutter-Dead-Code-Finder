@@ -2,7 +2,7 @@
   "name": "flutter-dead-code-finder",
   "displayName": "Flutter Dead Code Finder",
   "description": "Helps to find unreferenced methods, fields, and variables in Dart/Flutter projects",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "publisher": "Rasitarslan",
   "icon": "icon.png",
   "engines": {
