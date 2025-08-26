@@ -4,7 +4,7 @@ It finds unreferenced methods, fields, and variables in Dart/Flutter projects �
 
 https://github.com/KatayR/Flutter-Dead-Code-Finder
 
-Q:Why not just enable dead_code: error in analysis_options.yaml? Wouldn’t that be easier? What advantage does your tool have over that?  
+Q:Why not just enable `dead_code: error` in `analysis_options.yaml`? Wouldn’t that be easier? What advantage does your tool have over that?  
 A: `dead_code` in `analysis_options.yaml` only marks unreachable code (like after a return/throw). It doesn’t detect unreferenced methods, fields, or variables scattered in the project. My extension scans the whole codebase and catches those, even if the analyzer doesn’t warn in `Problems.
 
 ## ⚠️ Important Notice
