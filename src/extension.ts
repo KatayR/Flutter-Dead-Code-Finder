@@ -57,15 +57,15 @@ export function activate(context: vscode.ExtensionContext) {
 				try {
 					const document = await vscode.workspace.openTextDocument(file);
 					// Important: Ensure the document is loaded before getting symbols
-					if (!document) {continue;}
+					if (!document) { continue; }
 
 					const symbols: vscode.DocumentSymbol[] | undefined = await vscode.commands.executeCommand('vscode.executeDocumentSymbolProvider', document.uri);
-					if (!symbols) {continue;}
+					if (!symbols) { continue; }
 
 					// A recursive function to traverse the symbol tree
 					const findUnusedInSymbols = async (documentSymbols: vscode.DocumentSymbol[]) => {
 						for (const symbol of documentSymbols) {
-							if (token.isCancellationRequested) {break;}
+							if (token.isCancellationRequested) { break; }
 
 							// We care about methods, constructors, fields, properties, and variables
 							const isTargetSymbol = symbol.kind === vscode.SymbolKind.Method ||
@@ -122,7 +122,7 @@ export function activate(context: vscode.ExtensionContext) {
 			out.appendLine(`${s.file}:${s.line}: ${s.name} (${s.kind})`);
 		});
 
-		out.appendLine(`\n→ Found ${unreferencedSymbols.length} unreferenced symbols.`);
+		out.appendLine(`\n→ Found ${unreferencedSymbols.length} unused symbols.`);
 		// --- Display the results ---
 		let results = `Found ${unreferencedSymbols.length} potentially unreferenced symbols:\n\n`;
 
